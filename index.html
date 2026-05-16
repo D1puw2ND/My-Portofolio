@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Yamzz Portfolio - Pelajar Indonesia yang iseng ngulik coding dan web development." />
+  <meta name="author" content="Yamzz" />
+  <title>Yamzz - Portfolio | Pelajar & Web Developer Pemula</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-brand">
+      <span class="brand-name">Yamzz</span>
+      <span class="brand-sub">PORTFOLIO</span>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#partners">Partners</a></li>
+      <li><a href="#music">Music</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <ul>
+      <li><a href="#about" class="mobile-link">About</a></li>
+      <li><a href="#skills" class="mobile-link">Skills</a></li>
+      <li><a href="#partners" class="mobile-link">Partners</a></li>
+      <li><a href="#music" class="mobile-link">Music</a></li>
+      <li><a href="#contact" class="mobile-link">Contact</a></li>
+    </ul>
+  </div>
+
+  <!-- HERO / ABOUT -->
+  <section class="hero" id="about">
+    <div class="hero-bg"></div>
+    <div class="hero-content">
+      <div class="avatar-wrap">
+        <img src="https://i.pravatar.cc/150?img=12" alt="Yamzz Avatar" class="avatar" id="avatarImg" />
+        <span class="status-badge">● Available</span>
+      </div>
+      <h1 class="hero-name">Yamzz</h1>
+      <p class="hero-username">@yamzzdev</p>
+      <span class="hero-badge">Pelajar & Web Developer Pemula</span>
+      <p class="hero-bio">Hanya sebuah pelajar yang iseng, tapi serius ngulik dunia kode<span class="cursor">|</span></p>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <h2 class="section-title">My Skills</h2>
+      <div class="skills-list">
+        <div class="skill-item" data-percent="75">
+          <div class="skill-label">
+            <span class="skill-icon html-icon">&#123;&#125;</span>
+            <span>HTML</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar html-bar"></div>
+          </div>
+          <span class="skill-percent">75%</span>
+        </div>
+        <div class="skill-item" data-percent="65">
+          <div class="skill-label">
+            <span class="skill-icon css-icon">#</span>
+            <span>CSS</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar css-bar"></div>
+          </div>
+          <span class="skill-percent">65%</span>
+        </div>
+        <div class="skill-item" data-percent="40">
+          <div class="skill-label">
+            <span class="skill-icon js-icon">JS</span>
+            <span>JavaScript</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar js-bar"></div>
+          </div>
+          <span class="skill-percent">40%</span>
+        </div>
+        <div class="skill-item" data-percent="100">
+          <div class="skill-label">
+            <span class="skill-icon vibe-icon">🔥</span>
+            <span>Vibe Code</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar vibe-bar"></div>
+          </div>
+          <span class="skill-percent">100%</span>
+        </div>
+        <div class="skill-item" data-percent="100">
+          <div class="skill-label">
+            <span class="skill-icon google-icon">G</span>
+            <span>Googling</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar google-bar"></div>
+          </div>
+          <span class="skill-percent">100%</span>
+        </div>
+        <div class="skill-item" data-percent="95">
+          <div class="skill-label">
+            <span class="skill-icon sleep-icon">🌙</span>
+            <span>Turu</span>
+          </div>
+          <div class="skill-bar-wrap">
+            <div class="skill-bar sleep-bar"></div>
+          </div>
+          <span class="skill-percent">95%</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PARTNERS -->
+  <section class="section" id="partners">
+    <div class="container">
+      <h2 class="section-title">My Partners</h2>
+      <div class="partners-list">
+
+        <a href="https://claude.ai" target="_blank" class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Claude_AI_logo.svg/512px-Claude_AI_logo.svg.png" alt="Claude AI" class="partner-logo" />
+          <div class="partner-info">
+            <span class="partner-company">ANTHROPIC</span>
+            <span class="partner-name">Claude AI</span>
+            <span class="partner-desc">AI partner utama gw buat coding & problem solving</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square partner-arrow"></i>
+        </a>
+
+        <a href="https://chat.openai.com" target="_blank" class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/ChatGPT_logo.svg/512px-ChatGPT_logo.svg.png" alt="ChatGPT" class="partner-logo" />
+          <div class="partner-info">
+            <span class="partner-company">OPENAI</span>
+            <span class="partner-name">ChatGPT</span>
+            <span class="partner-desc">AI populer buat brainstorming & nulis konten</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square partner-arrow"></i>
+        </a>
+
+        <a href="https://gemini.google.com" target="_blank" class="partner-card">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Google_Gemini_logo.svg/512px-Google_Gemini_logo.svg.png" alt="Gemini" class="partner-logo" />
+          <div class="partner-info">
+            <span class="partner-company">GOOGLE</span>
+            <span class="partner-name">Gemini</span>
+            <span class="partner-desc">AI dari Google buat research & analisis</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square partner-arrow"></i>
+        </a>
+
+        <a href="https://chat.deepseek.com" target="_blank" class="partner-card deepseek-active">
+          <img src="https://avatars.githubusercontent.com/u/148440477?s=200&v=4" alt="DeepSeek" class="partner-logo" />
+          <div class="partner-info">
+            <span class="partner-company">DEEPSEEK</span>
+            <span class="partner-name">DeepSeek</span>
+            <span class="partner-desc">AI open source buat coding & reasoning</span>
+          </div>
+          <i class="fa-solid fa-arrow-up-right-from-square partner-arrow"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MUSIC -->
+  <section class="section" id="music">
+    <div class="container">
+      <h2 class="section-title music-title">Music</h2>
+
+      <div class="music-player">
+        <div class="player-header">
+          <span class="playlist-label">YAMZZDEV PLAYLIST</span>
+        </div>
+        <div class="player-now">
+          <img src="https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96" alt="Multo" class="player-thumb" id="playerThumb" />
+          <div class="player-track-info">
+            <span class="player-track-name" id="playerTrackName">Multo</span>
+            <span class="player-track-artist" id="playerTrackArtist">Cup of Joe</span>
+          </div>
+        </div>
+        <div class="player-progress">
+          <input type="range" class="progress-bar" id="progressBar" value="0" min="0" max="100" />
+          <div class="progress-time">
+            <span id="currentTime">0:00</span>
+            <span id="totalTime">3:57</span>
+          </div>
+        </div>
+        <div class="player-controls">
+          <button class="ctrl-btn" id="shuffleBtn" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+          <button class="ctrl-btn" id="prevBtn"><i class="fa-solid fa-backward-step"></i></button>
+          <button class="ctrl-btn play-btn" id="playBtn"><i class="fa-solid fa-play" id="playIcon"></i></button>
+          <button class="ctrl-btn" id="nextBtn"><i class="fa-solid fa-forward-step"></i></button>
+        </div>
+
+        <div class="playlist">
+          <div class="playlist-item active" data-index="0">
+            <img src="https://i.scdn.co/image/ab67616d0000b273ba5db46f4b838ef6027e6f96" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">Multo</span>
+              <span class="pl-artist">Cup of Joe</span>
+            </div>
+            <span class="pl-num">1</span>
+          </div>
+          <div class="playlist-item" data-index="1">
+            <img src="https://i.scdn.co/image/ab67616d0000b2730b5a2aab4e2b4c6e7b6b3b6b" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">everything u are</span>
+              <span class="pl-artist">Hindia</span>
+            </div>
+            <span class="pl-num">2</span>
+          </div>
+          <div class="playlist-item" data-index="2">
+            <img src="https://i.scdn.co/image/ab67616d0000b273b3b3b3b3b3b3b3b3b3b3b3b3" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">Lihat Kebunku (Taman Bunga)</span>
+              <span class="pl-artist">Aku Jeje</span>
+            </div>
+            <span class="pl-num">3</span>
+          </div>
+          <div class="playlist-item" data-index="3">
+            <img src="https://i.scdn.co/image/ab67616d0000b273c4c4c4c4c4c4c4c4c4c4c4c4" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">33x</span>
+              <span class="pl-artist">Perunggu</span>
+            </div>
+            <span class="pl-num">4</span>
+          </div>
+          <div class="playlist-item" data-index="4">
+            <img src="https://i.scdn.co/image/ab67616d0000b273d5d5d5d5d5d5d5d5d5d5d5d5" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">Cincin</span>
+              <span class="pl-artist">Hindia</span>
+            </div>
+            <span class="pl-num">5</span>
+          </div>
+          <div class="playlist-item" data-index="5">
+            <img src="https://i.scdn.co/image/ab67616d0000b273e6e6e6e6e6e6e6e6e6e6e6e6" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">Nina</span>
+              <span class="pl-artist">Feast</span>
+            </div>
+            <span class="pl-num">6</span>
+          </div>
+          <div class="playlist-item" data-index="6">
+            <img src="https://i.scdn.co/image/ab67616d0000b273f7f7f7f7f7f7f7f7f7f7f7f7" alt="" class="pl-thumb" />
+            <div class="pl-info">
+              <span class="pl-name">The Winner Takes It All</span>
+              <span class="pl-artist">ABBA</span>
+            </div>
+            <span class="pl-num">7</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-list">
+
+        <a href="https://github.com/yamzzdev" target="_blank" class="contact-card">
+          <i class="fa-brands fa-github contact-icon"></i>
+          <span>GitHub</span>
+          <i class="fa-solid fa-chevron-right contact-arrow"></i>
+        </a>
+
+        <a href="https://t.me/yamzzdev" target="_blank" class="contact-card">
+          <i class="fa-brands fa-telegram contact-icon"></i>
+          <span>Telegram</span>
+          <i class="fa-solid fa-chevron-right contact-arrow"></i>
+        </a>
+
+        <a href="https://instagram.com/ymzzzoff" target="_blank" class="contact-card">
+          <i class="fa-brands fa-instagram contact-icon"></i>
+          <span>Instagram</span>
+          <i class="fa-solid fa-chevron-right contact-arrow"></i>
+        </a>
+
+        <a href="https://tiktok.com/@ymzzzoff" target="_blank" class="contact-card">
+          <i class="fa-brands fa-tiktok contact-icon"></i>
+          <span>TikTok</span>
+          <i class="fa-solid fa-chevron-right contact-arrow"></i>
+        </a>
+
+        <a href="https://wa.me/628xxxxxxxxxx" target="_blank" class="contact-card">
+          <i class="fa-brands fa-whatsapp contact-icon"></i>
+          <span>WhatsApp</span>
+          <i class="fa-solid fa-chevron-right contact-arrow"></i>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Made with <span class="heart">❤</span> by Yamzz © 2026</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -4,16 +4,534 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Introduce - D1puww</title>
-
-  <!-- Link CSS yang sama -->
   <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    /* ── INTRODUCE PAGE SPECIFIC STYLES ── */
+
+    .intro-page {
+      min-height: 100vh;
+      padding: 100px 20px 60px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .intro-bg {
+      position: fixed;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 70% 50% at 50% 0%, rgba(108,138,255,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 90%, rgba(0,200,180,0.07) 0%, transparent 60%),
+        radial-gradient(ellipse 30% 40% at 90% 50%, rgba(155,111,255,0.08) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .intro-container {
+      max-width: 680px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ── HERO PROFILE ── */
+    .profile-hero {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+      padding: 40px 0 60px;
+      animation: fadeUp 0.7s ease both;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-avatar-ring {
+      position: relative;
+      width: 130px;
+      height: 130px;
+    }
+
+    .profile-avatar-ring::before {
+      content: '';
+      position: absolute;
+      inset: -4px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6c8aff, #9b6fff, #4ecca3);
+      animation: spinRing 4s linear infinite;
+      z-index: 0;
+    }
+
+    @keyframes spinRing {
+      from { transform: rotate(0deg); }
+      to   { transform: rotate(360deg); }
+    }
+
+    .profile-avatar-ring::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      background: var(--bg-primary);
+      z-index: 1;
+    }
+
+    .profile-avatar {
+      position: relative;
+      z-index: 2;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: rgba(108,138,255,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      color: var(--accent-blue);
+      border: 3px solid var(--bg-primary);
+    }
+
+    .profile-avatar img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-name {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 800;
+      color: var(--accent-blue);
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+
+    .profile-school {
+      font-size: 14px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .profile-school i {
+      color: var(--accent-blue);
+    }
+
+    .profile-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      margin-top: 4px;
+    }
+
+    .profile-tag {
+      background: rgba(108,138,255,0.1);
+      border: 1px solid rgba(108,138,255,0.2);
+      color: var(--accent-blue);
+      font-size: 12px;
+      font-weight: 500;
+      padding: 4px 12px;
+      border-radius: 99px;
+    }
+
+    /* ── INFO CARDS ── */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 40px;
+      animation: fadeUp 0.7s 0.1s ease both;
+    }
+
+    .info-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .info-card:hover {
+      border-color: rgba(108,138,255,0.3);
+      transform: translateY(-2px);
+    }
+
+    .info-card-icon {
+      font-size: 20px;
+      margin-bottom: 4px;
+    }
+
+    .info-card-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+
+    .info-card-value {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text-primary);
+      line-height: 1.4;
+    }
+
+    /* ── QUOTE ── */
+    .quote-block {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent-blue);
+      border-radius: var(--radius);
+      padding: 20px 22px;
+      margin-bottom: 40px;
+      position: relative;
+      animation: fadeUp 0.7s 0.2s ease both;
+    }
+
+    .quote-mark {
+      font-size: 48px;
+      color: rgba(108,138,255,0.15);
+      font-family: Georgia, serif;
+      line-height: 1;
+      position: absolute;
+      top: 8px;
+      left: 16px;
+    }
+
+    .quote-text {
+      font-style: italic;
+      color: var(--text-secondary);
+      font-size: 15px;
+      line-height: 1.7;
+      padding-left: 20px;
+    }
+
+    .quote-author {
+      font-size: 12px;
+      color: var(--accent-blue);
+      font-weight: 600;
+      margin-top: 8px;
+      padding-left: 20px;
+    }
+
+    /* ── FLASHCARD GAME ── */
+    .game-wrap {
+      margin-bottom: 60px;
+      animation: fadeUp 0.7s 0.4s ease both;
+    }
+
+    .game-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+
+    .game-score {
+      display: flex;
+      gap: 12px;
+    }
+
+    .score-badge {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 4px 14px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    .score-badge span {
+      color: var(--accent-blue);
+    }
+
+    .game-progress-wrap {
+      background: rgba(255,255,255,0.05);
+      border-radius: 99px;
+      height: 4px;
+      margin-bottom: 20px;
+      overflow: hidden;
+    }
+
+    .game-progress-bar {
+      height: 100%;
+      background: var(--accent-gradient);
+      border-radius: 99px;
+      transition: width 0.4s ease;
+    }
+
+    /* Flashcard */
+    .flashcard-scene {
+      perspective: 1000px;
+      margin-bottom: 16px;
+      cursor: pointer;
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 200px;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      min-height: 200px;
+    }
+
+    .card-front {
+      background: var(--bg-card);
+      border: 1px solid rgba(108,138,255,0.25);
+    }
+
+    .card-back {
+      background: linear-gradient(135deg, rgba(108,138,255,0.12), rgba(155,111,255,0.08));
+      border: 1px solid rgba(155,111,255,0.3);
+      transform: rotateY(180deg);
+    }
+
+    .card-category {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      color: var(--accent-blue);
+      margin-bottom: 12px;
+    }
+
+    .card-formula {
+      font-family: var(--font-display);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 10px;
+      line-height: 1.2;
+    }
+
+    .card-hint {
+      font-size: 13px;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    .card-flip-hint {
+      position: absolute;
+      bottom: 12px;
+      right: 16px;
+      font-size: 11px;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+    }
+
+    .card-answer-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      color: var(--accent-purple);
+      margin-bottom: 8px;
+    }
+
+    .card-answer-name {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+    }
+
+    .card-answer-year {
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+
+    /* Answer buttons */
+    .answer-options {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+
+    .answer-btn {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 12px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: var(--font-body);
+      text-align: left;
+    }
+
+    .answer-btn:hover:not(:disabled) {
+      border-color: rgba(108,138,255,0.4);
+      color: var(--text-primary);
+      background: rgba(108,138,255,0.08);
+    }
+
+    .answer-btn.correct {
+      background: rgba(78,204,163,0.15);
+      border-color: #4ecca3;
+      color: #4ecca3;
+    }
+
+    .answer-btn.wrong {
+      background: rgba(255,92,124,0.1);
+      border-color: #ff5c7c;
+      color: #ff5c7c;
+    }
+
+    .answer-btn:disabled {
+      cursor: default;
+    }
+
+    /* Feedback */
+    .game-feedback {
+      text-align: center;
+      font-size: 14px;
+      font-weight: 600;
+      padding: 10px;
+      border-radius: var(--radius-sm);
+      margin-bottom: 12px;
+      display: none;
+    }
+
+    .game-feedback.correct {
+      background: rgba(78,204,163,0.1);
+      color: #4ecca3;
+      display: block;
+    }
+
+    .game-feedback.wrong {
+      background: rgba(255,92,124,0.08);
+      color: #ff5c7c;
+      display: block;
+    }
+
+    .game-next-btn {
+      width: 100%;
+      padding: 13px;
+      background: var(--accent-blue);
+      border: none;
+      border-radius: var(--radius-sm);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: opacity 0.2s, transform 0.15s;
+      display: none;
+    }
+
+    .game-next-btn:hover {
+      opacity: 0.9;
+      transform: translateY(-1px);
+    }
+
+    /* Result screen */
+    .game-result {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 12px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 40px 24px;
+    }
+
+    .game-result.show {
+      display: flex;
+    }
+
+    .result-emoji {
+      font-size: 52px;
+    }
+
+    .result-title {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--text-primary);
+    }
+
+    .result-score {
+      font-size: 48px;
+      font-weight: 800;
+      font-family: var(--font-display);
+      color: var(--accent-blue);
+    }
+
+    .result-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 300px;
+    }
+
+    .result-restart-btn {
+      margin-top: 8px;
+      padding: 12px 32px;
+      background: var(--accent-blue);
+      border: none;
+      border-radius: 99px;
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: var(--font-body);
+      transition: opacity 0.2s;
+    }
+
+    .result-restart-btn:hover { opacity: 0.85; }
+
+    .game-area { display: block; }
+    .game-area.hidden { display: none; }
+
+    @media (max-width: 480px) {
+      .info-grid { grid-template-columns: 1fr; }
+      .profile-name { font-size: 34px; }
+      .card-formula { font-size: 26px; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navbar (copy dari index.html, ganti link Introduce jadi aktif) -->
-  <nav class="navbar">
+  <!-- NAVBAR -->
+  <nav class="navbar" id="navbar">
     <div class="nav-brand">
       <span class="brand-name">D1puww</span>
       <span class="brand-sub">Introduce</span>
@@ -26,34 +544,398 @@
       <li><a href="index.html#contact">Contact</a></li>
       <li><a href="introduce.html" style="color: var(--text-primary)">Introduce</a></li>
     </ul>
-    
     <button class="hamburger" id="hamburger" aria-label="Menu">
-  <span></span><span></span><span></span>
-</button>
+      <span></span><span></span><span></span>
+    </button>
   </nav>
-  
+
+  <!-- MOBILE MENU -->
   <div class="mobile-menu" id="mobileMenu">
-  <ul>
-    <li><a href="index.html" class="mobile-link">About</a></li>
-    <li><a href="index.html#skills" class="mobile-link">Skills</a></li>
-    <li><a href="index.html#partners" class="mobile-link">Partners</a></li>
-    <li><a href="index.html#music" class="mobile-link">Music</a></li>
-    <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
-    <li><a href="introduce.html" class="mobile-link">Introduce</a></li>
-  </ul>
-</div>
+    <ul>
+      <li><a href="index.html" class="mobile-link">About</a></li>
+      <li><a href="index.html#skills" class="mobile-link">Skills</a></li>
+      <li><a href="index.html#partners" class="mobile-link">Partners</a></li>
+      <li><a href="index.html#music" class="mobile-link">Music</a></li>
+      <li><a href="index.html#contact" class="mobile-link">Contact</a></li>
+      <li><a href="introduce.html" class="mobile-link">Introduce</a></li>
+    </ul>
+  </div>
 
-  <!-- Konten introduce lu di sini -->
-  <section class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <h1 class="hero-name">Perkenalan.</h1>
-      <p class="hero-bio">Halo semuanya, Perkenalkan Nama saya Adi Putra Maulana Bachri. saya adalah bagian dari Kelas IX C, SMP Muhammadiyah merauke. Salam kenal semua, Dan selamat datang di TestWeb Introduce saya...
-      <br>"D1puww"</br>
-      </p>
+  <div class="intro-bg"></div>
+
+  <div class="intro-page">
+    <div class="intro-container">
+
+      <!-- ── PROFILE HERO ── -->
+      <div class="profile-hero">
+        <div class="profile-avatar-ring">
+          <div class="profile-avatar">
+            <!-- Ganti src dengan path foto lu, contoh: src="foto-gw.jpg" -->
+            <i class="fa-solid fa-user"></i>
+          </div>
+        </div>
+        <h1 class="profile-name">Adi Putra</h1>
+        <p class="profile-school">
+          <i class="fa-solid fa-school"></i>
+          Kelas IX C — SMP Muhammadiyah Merauke
+        </p>
+        <div class="profile-tags">
+          <span class="profile-tag">🎮 Gamer</span>
+          <span class="profile-tag">💻 Web Dev Pemula</span>
+          <span class="profile-tag">🎵 Music Lover</span>
+          <span class="profile-tag">📚 Pelajar</span>
+        </div>
+      </div>
+
+      <!-- ── INFO CARDS ── -->
+      <div class="info-grid">
+        <div class="info-card">
+          <span class="info-card-icon">🎯</span>
+          <span class="info-card-label">Cita-cita</span>
+          <span class="info-card-value">Software Engineer</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">✨</span>
+          <span class="info-card-label">Motivasi</span>
+          <span class="info-card-value">Belajar setiap hari, gagal itu wajar</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">📍</span>
+          <span class="info-card-label">Hobby</span>
+          <span class="info-card-value">Main game, Belajar, Nonton anime :v</span>
+        </div>
+        <div class="info-card">
+          <span class="info-card-icon">🔥</span>
+          <span class="info-card-label">Skill Terkuat</span>
+          <span class="info-card-value">Googling & Vibe Coding</span>
+        </div>
+      </div>
+
+      <!-- ── QUOTE ── -->
+      <div class="quote-block">
+        <span class="quote-mark">"</span>
+        <p class="quote-text">
+          Kode yang bagus bukan yang paling rumit, tapi yang paling mudah dipahami orang lain — termasuk dirimu sendiri 6 bulan kemudian.
+        </p>
+        <p class="quote-author">— D1puww, 2026</p>
+      </div>
+
+      <!-- ── FLASHCARD GAME ── -->
+      <div class="game-wrap">
+        <h2 class="section-title">Mini Game — Tebak Penemu</h2>
+        <p style="color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">
+          Gue kasih rumus/teori Fisika, lu tebak siapa penemunya. 10 soal, tanpa pengulangan!
+        </p>
+
+        <!-- Score -->
+        <div class="game-header">
+          <div class="game-score">
+            <div class="score-badge">Skor: <span id="scoreEl">0</span></div>
+            <div class="score-badge">Soal: <span id="questionNumEl">1</span>/10</div>
+          </div>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="game-progress-wrap">
+          <div class="game-progress-bar" id="gameProgressBar" style="width: 0%"></div>
+        </div>
+
+        <!-- Game area -->
+        <div class="game-area" id="gameArea">
+
+          <!-- Flashcard -->
+          <div class="flashcard-scene" id="flashcardScene" title="Klik untuk flip kartu">
+            <div class="flashcard" id="flashcard">
+              <div class="card-front">
+                <span class="card-category" id="cardCategory">MEKANIKA</span>
+                <div class="card-formula" id="cardFormula">F = ma</div>
+                <p class="card-hint" id="cardHint">Gaya sama dengan massa dikali percepatan</p>
+                <span class="card-flip-hint"><i class="fa-solid fa-rotate"></i> Flip untuk lihat jawaban</span>
+              </div>
+              <div class="card-back">
+                <span class="card-answer-label">PENEMU / PENCETUS</span>
+                <div class="card-answer-name" id="cardAnswerName">Isaac Newton</div>
+                <div class="card-answer-year" id="cardAnswerYear">1687 · Principia Mathematica</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Answer options -->
+          <div class="answer-options" id="answerOptions"></div>
+
+          <!-- Feedback -->
+          <div class="game-feedback" id="gameFeedback"></div>
+
+          <!-- Next button -->
+          <button class="game-next-btn" id="gameNextBtn">
+            Soal Berikutnya <i class="fa-solid fa-arrow-right"></i>
+          </button>
+
+        </div>
+
+        <!-- Result screen -->
+        <div class="game-result" id="gameResult">
+          <div class="result-emoji" id="resultEmoji">🎉</div>
+          <div class="result-title">Selesai!</div>
+          <div class="result-score" id="resultScore">0/10</div>
+          <div class="result-desc" id="resultDesc">Keren! Lu berhasil menyelesaikan semua soal.</div>
+          <button class="result-restart-btn" id="restartBtn">
+            <i class="fa-solid fa-rotate-left"></i> Main Lagi
+          </button>
+        </div>
+
+      </div>
+
     </div>
-  </section>
+  </div>
 
-  <script src="script.js"></script>
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>Made with <span class="heart">❤</span> by D1puww © 2026</p>
+  </footer>
+
+  <script>
+    // ── Navbar ────────────────────────────────
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 40);
+    });
+
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobileMenu');
+    hamburger.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+    document.querySelectorAll('.mobile-link').forEach(link => {
+      link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+    });
+
+    // ── FLASHCARD GAME ────────────────────────
+    const allCards = [
+      {
+        category: 'MEKANIKA',
+        formula: 'F = ma',
+        hint: 'Gaya sama dengan massa dikali percepatan',
+        answer: 'Isaac Newton',
+        year: '1687 · Principia Mathematica',
+        wrong: ['Albert Einstein', 'Galileo Galilei', 'Nikola Tesla']
+      },
+      {
+        category: 'RELATIVITAS',
+        formula: 'E = mc²',
+        hint: 'Energi sama dengan massa dikali kecepatan cahaya kuadrat',
+        answer: 'Albert Einstein',
+        year: '1905 · Teori Relativitas Khusus',
+        wrong: ['Max Planck', 'Isaac Newton', 'Niels Bohr']
+      },
+      {
+        category: 'LISTRIK',
+        formula: 'V = IR',
+        hint: 'Tegangan sama dengan arus dikali hambatan',
+        answer: 'Georg Ohm',
+        year: '1827 · Hukum Ohm',
+        wrong: ['Michael Faraday', 'James Watt', 'Alessandro Volta']
+      },
+      {
+        category: 'GRAVITASI',
+        formula: 'F = G(m₁m₂)/r²',
+        hint: 'Hukum gravitasi universal antara dua benda bermassa',
+        answer: 'Isaac Newton',
+        year: '1687 · Hukum Gravitasi Universal',
+        wrong: ['Johannes Kepler', 'Galileo Galilei', 'Tycho Brahe']
+      },
+      {
+        category: 'KUANTUM',
+        formula: 'E = hf',
+        hint: 'Energi foton sama dengan konstanta Planck dikali frekuensi',
+        answer: 'Max Planck',
+        year: '1900 · Teori Kuantum',
+        wrong: ['Albert Einstein', 'Niels Bohr', 'Werner Heisenberg']
+      },
+      {
+        category: 'TERMODINAMIKA',
+        formula: 'PV = nRT',
+        hint: 'Persamaan gas ideal — tekanan, volume, mol, suhu',
+        answer: 'Émile Clapeyron',
+        year: '1834 · Hukum Gas Ideal',
+        wrong: ['Robert Boyle', 'Jacques Charles', 'James Joule']
+      },
+      {
+        category: 'GELOMBANG',
+        formula: 'v = fλ',
+        hint: 'Kecepatan gelombang sama dengan frekuensi dikali panjang gelombang',
+        answer: 'Christiaan Huygens',
+        year: '1678 · Teori Gelombang Cahaya',
+        wrong: ['Thomas Young', 'Heinrich Hertz', 'James Maxwell']
+      },
+      {
+        category: 'ELEKTROMAGNET',
+        formula: 'F = qvB',
+        hint: 'Gaya Lorentz pada muatan bergerak dalam medan magnet',
+        answer: 'Hendrik Lorentz',
+        year: '1895 · Gaya Lorentz',
+        wrong: ['Michael Faraday', 'James Maxwell', 'Hans Oersted']
+      },
+      {
+        category: 'OPTIK',
+        formula: '1/f = 1/v + 1/u',
+        hint: 'Persamaan lensa tipis — fokus, jarak bayangan, jarak benda',
+        answer: 'René Descartes',
+        year: '1637 · La Dioptrique',
+        wrong: ['Isaac Newton', 'Willebrord Snell', 'Christiaan Huygens']
+      },
+      {
+        category: 'NUKLIR',
+        formula: 'ΔE = Δmc²',
+        hint: 'Defek massa dalam reaksi nuklir menghasilkan energi',
+        answer: 'Albert Einstein',
+        year: '1905 · Relativitas Khusus',
+        wrong: ['Ernest Rutherford', 'Niels Bohr', 'Marie Curie']
+      },
+    ];
+
+    let questions = [];
+    let currentQ  = 0;
+    let score     = 0;
+    let answered  = false;
+
+    const scoreEl       = document.getElementById('scoreEl');
+    const questionNumEl = document.getElementById('questionNumEl');
+    const progressBar   = document.getElementById('gameProgressBar');
+    const flashcard     = document.getElementById('flashcard');
+    const flashcardScene= document.getElementById('flashcardScene');
+    const cardCategory  = document.getElementById('cardCategory');
+    const cardFormula   = document.getElementById('cardFormula');
+    const cardHint      = document.getElementById('cardHint');
+    const cardAnswerName= document.getElementById('cardAnswerName');
+    const cardAnswerYear= document.getElementById('cardAnswerYear');
+    const answerOptions = document.getElementById('answerOptions');
+    const gameFeedback  = document.getElementById('gameFeedback');
+    const gameNextBtn   = document.getElementById('gameNextBtn');
+    const gameArea      = document.getElementById('gameArea');
+    const gameResult    = document.getElementById('gameResult');
+    const resultEmoji   = document.getElementById('resultEmoji');
+    const resultScore   = document.getElementById('resultScore');
+    const resultDesc    = document.getElementById('resultDesc');
+    const restartBtn    = document.getElementById('restartBtn');
+
+    // Shuffle array (Fisher-Yates)
+    function shuffle(arr) {
+      const a = [...arr];
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+      }
+      return a;
+    }
+
+    function startGame() {
+      questions = shuffle(allCards).slice(0, 10);
+      currentQ  = 0;
+      score     = 0;
+      answered  = false;
+      gameArea.classList.remove('hidden');
+      gameResult.classList.remove('show');
+      scoreEl.textContent = 0;
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      answered = false;
+      flashcard.classList.remove('flipped');
+      gameFeedback.className = 'game-feedback';
+      gameFeedback.textContent = '';
+      gameNextBtn.style.display = 'none';
+
+      const q = questions[currentQ];
+      cardCategory.textContent  = q.category;
+      cardFormula.textContent   = q.formula;
+      cardHint.textContent      = q.hint;
+      cardAnswerName.textContent= q.answer;
+      cardAnswerYear.textContent= q.year;
+
+      questionNumEl.textContent = currentQ + 1;
+      progressBar.style.width   = (currentQ / 10 * 100) + '%';
+
+      // Build answer options: 1 correct + 3 wrong, shuffled
+      const options = shuffle([q.answer, ...q.wrong.slice(0, 3)]);
+      answerOptions.innerHTML = '';
+      options.forEach(opt => {
+        const btn = document.createElement('button');
+        btn.className = 'answer-btn';
+        btn.textContent = opt;
+        btn.addEventListener('click', () => checkAnswer(opt, q.answer));
+        answerOptions.appendChild(btn);
+      });
+    }
+
+    function checkAnswer(selected, correct) {
+      if (answered) return;
+      answered = true;
+
+      // Flip card to show answer
+      flashcard.classList.add('flipped');
+
+      const btns = answerOptions.querySelectorAll('.answer-btn');
+      btns.forEach(btn => {
+        btn.disabled = true;
+        if (btn.textContent === correct) btn.classList.add('correct');
+        else if (btn.textContent === selected) btn.classList.add('wrong');
+      });
+
+      if (selected === correct) {
+        score++;
+        scoreEl.textContent = score;
+        gameFeedback.textContent = '✅ Benar! Keren!';
+        gameFeedback.className = 'game-feedback correct';
+      } else {
+        gameFeedback.textContent = `❌ Salah! Jawaban yang benar: ${correct}`;
+        gameFeedback.className = 'game-feedback wrong';
+      }
+
+      gameNextBtn.style.display = 'block';
+      gameNextBtn.textContent = currentQ < 9
+        ? 'Soal Berikutnya →'
+        : 'Lihat Hasil 🎯';
+    }
+
+    gameNextBtn.addEventListener('click', () => {
+      currentQ++;
+      if (currentQ >= 10) {
+        showResult();
+      } else {
+        loadQuestion();
+      }
+    });
+
+    flashcardScene.addEventListener('click', () => {
+      flashcard.classList.toggle('flipped');
+    });
+
+    function showResult() {
+      gameArea.classList.add('hidden');
+      gameResult.classList.add('show');
+      progressBar.style.width = '100%';
+      resultScore.textContent = `${score}/10`;
+
+      if (score === 10) {
+        resultEmoji.textContent = '🏆';
+        resultDesc.textContent  = 'SEMPURNA! Lu jenius fisika sejati!';
+      } else if (score >= 7) {
+        resultEmoji.textContent = '🎉';
+        resultDesc.textContent  = 'Keren! Nilai lu di atas rata-rata!';
+      } else if (score >= 5) {
+        resultEmoji.textContent = '😊';
+        resultDesc.textContent  = 'Lumayan! Tapi masih bisa lebih baik lagi!';
+      } else {
+        resultEmoji.textContent = '📚';
+        resultDesc.textContent  = 'Hmm, kayaknya perlu belajar fisika lagi nih!';
+      }
+    }
+
+    restartBtn.addEventListener('click', startGame);
+
+    // Start game on load
+    startGame();
+  </script>
+
 </body>
 </html>

@@ -85,7 +85,7 @@ let playlist = [
   { name: 'everything u are',            artist: 'Hindia',     file: 'Music/everything-u-are.mp3',         cover: "Icons/everything-u-are-icon.jpg", url: 'Musiceverything-u-are.mp3' },
   { name: 'Cincin',                      artist: 'Hindia',     file: 'Music/Cincin.mp3',                   cover: "Icons/Cincin-icon.jpg", url: 'Music/Cincin.mp3' },
   { name: 'The Winner Takes It All',     artist: 'ABBA',       file: 'Music/The-Winner-Takes-It-All.mp3',  cover: "Icons/The-Winner-Takes-It-All-icon.jpg", url: 'Music/The-Winner-Takes-It-All.mp3' },
-  { name: 'Tak Ada Yang Abadi',                       artist: 'Shafira record official', file: 'Music/tak-ada-yang-abadi.mp3',                   cover: 'Icons/noah.jpg' , url: 'Music/tak-ada-yang-abadi.mp3' },
+  { name: 'Tak Ada Yang Abadi',                       artist: 'Shafira record official', file: 'Music/tak-ada-yang-abadi.mp3',                   cover: 'Icons/noah-icon.jpg' , url: 'Music/tak-ada-yang-abadi.mp3' },
 ];
 
 let currentIndex = 0;

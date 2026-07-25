@@ -81,11 +81,11 @@ const fileInput     = document.getElementById('fileInput');
 // Contoh: jika file MP3 bernama "multo.mp3", taruh di folder yang sama dengan index.html.
 // Jika belum ada file MP3-nya, lagu tidak akan bisa diputar sampai file tersedia.
 let playlist = [
-  { name: 'Multo',                       artist: 'Cup of Joe', file: 'Music/Multo.mp3',                   cover: "Icons/Multo-icon.jpg", url: 'Music/Multo.mp3' },
-  { name: 'everything u are',            artist: 'Hindia',     file: 'Music/everything-u-are.mp3',         cover: "Icons/everything-u-are-icon.jpg", url: 'Musiceverything-u-are.mp3' },
-  { name: 'Cincin',                      artist: 'Hindia',     file: 'Music/Cincin.mp3',                   cover: "Icons/Cincin-icon.jpg", url: 'Music/Cincin.mp3' },
-  { name: 'The Winner Takes It All',     artist: 'ABBA',       file: 'Music/The-Winner-Takes-It-All.mp3',  cover: "Icons/The-Winner-Takes-It-All-icon.jpg", url: 'Music/The-Winner-Takes-It-All.mp3' },
-  { name: 'Tak Ada Yang Abadi',                       artist: 'Shafira record official', file: 'Music/tak-ada-yang-abadi.mp3',                   cover: 'Icons/noah-icon.jpg' , url: 'Music/tak-ada-yang-abadi.mp3' },
+  { name: 'Multo',                       artist: 'Cup of Joe', file: 'Multo.mp3',                   cover: "Icons/Multo-icon.jpg", url: 'Music/Multo.mp3' },
+  { name: 'everything u are',            artist: 'Hindia',     file: 'everything-u-are.mp3',         cover: "Icons/everything-u-are-icon.jpg", url: 'Musiceverything-u-are.mp3' },
+  { name: 'Cincin',                      artist: 'Hindia',     file: 'Cincin.mp3',                   cover: "Icons/Cincin-icon.jpg", url: 'Music/Cincin.mp3' },
+  { name: 'The Winner Takes It All',     artist: 'ABBA',       file: 'The-Winner-Takes-It-All.mp3',  cover: "Icons/The-Winner-Takes-It-All-icon.jpg", url: 'Music/The-Winner-Takes-It-All.mp3' },
+  { name: 'Tak Ada Yang Abadi',                       artist: 'Shafira record official', file: 'tak-ada-yang-abadi.mp3',                   cover: 'Icons/noah-icon.jpg' , url: 'Music/tak-ada-yang-abadi.mp3' },
 ];
 
 let currentIndex = 0;

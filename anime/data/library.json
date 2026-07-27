@@ -1,0 +1,125 @@
+{
+  "series": [
+    {
+      "id": "9153ba836ea6fd26",
+      "title": "Isekai Nonbiri Nouka",
+      "folderPath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka",
+      "posterPath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/cover.jpeg",
+      "episodeCount": 11,
+      "episodes": [
+        {
+          "id": "fcbaa66a1b705973",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP1.mp4",
+          "filename": "INN EP1.mp4",
+          "title": "Episode 1",
+          "episodeNumber": 1,
+          "sizeBytes": 131430676,
+          "ext": ".mp4"
+        },
+        {
+          "id": "e8d16b9b68f94193",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP2.mp4",
+          "filename": "INN EP2.mp4",
+          "title": "Episode 2",
+          "episodeNumber": 2,
+          "sizeBytes": 118238054,
+          "ext": ".mp4"
+        },
+        {
+          "id": "3f70741b9d43f495",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP3.mp4",
+          "filename": "INN EP3.mp4",
+          "title": "Episode 3",
+          "episodeNumber": 3,
+          "sizeBytes": 113036571,
+          "ext": ".mp4"
+        },
+        {
+          "id": "24193e01e42fd19d",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP4.mp4",
+          "filename": "INN EP4.mp4",
+          "title": "Episode 4",
+          "episodeNumber": 4,
+          "sizeBytes": 123640108,
+          "ext": ".mp4"
+        },
+        {
+          "id": "f01b23f0a46b23cb",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP5.mp4",
+          "filename": "INN EP5.mp4",
+          "title": "Episode 5",
+          "episodeNumber": 5,
+          "sizeBytes": 121093342,
+          "ext": ".mp4"
+        },
+        {
+          "id": "37fc399115b42e4a",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP7.mp4",
+          "filename": "INN EP7.mp4",
+          "title": "Episode 7",
+          "episodeNumber": 7,
+          "sizeBytes": 104756035,
+          "ext": ".mp4"
+        },
+        {
+          "id": "73cecded60675f3a",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP8.mp4",
+          "filename": "INN EP8.mp4",
+          "title": "Episode 8",
+          "episodeNumber": 8,
+          "sizeBytes": 114559705,
+          "ext": ".mp4"
+        },
+        {
+          "id": "47dfd3dbb04a5696",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP9.mp4",
+          "filename": "INN EP9.mp4",
+          "title": "Episode 9",
+          "episodeNumber": 9,
+          "sizeBytes": 109732859,
+          "ext": ".mp4"
+        },
+        {
+          "id": "310ccc6ee304f753",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP10.mp4",
+          "filename": "INN EP10.mp4",
+          "title": "Episode 10",
+          "episodeNumber": 10,
+          "sizeBytes": 110105687,
+          "ext": ".mp4"
+        },
+        {
+          "id": "0a57421090b7e55c",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP11.mp4",
+          "filename": "INN EP11.mp4",
+          "title": "Episode 11",
+          "episodeNumber": 11,
+          "sizeBytes": 113594800,
+          "ext": ".mp4"
+        },
+        {
+          "id": "e5b80f1a3c301821",
+          "seriesId": "9153ba836ea6fd26",
+          "filePath": "/home/putra/Putra`/PROJECT WEB STREAM/anime-server/anime-library/Isekai Nonbiri Nouka/INN EP12.mp4",
+          "filename": "INN EP12.mp4",
+          "title": "Episode 12",
+          "episodeNumber": 12,
+          "sizeBytes": 104155499,
+          "ext": ".mp4"
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "scannedAt": "2026-07-27T09:48:16.457Z"
+}

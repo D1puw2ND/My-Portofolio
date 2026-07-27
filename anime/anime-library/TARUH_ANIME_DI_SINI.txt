@@ -1,0 +1,25 @@
+Taruh folder anime kamu di sini. Contoh struktur:
+
+anime-library/
+  Nama Anime A/
+    Nama Anime A - 01.mp4
+    Nama Anime A - 02.mp4
+  Nama Anime B/
+    Nama Anime B - 01.mkv
+    Nama Anime B - 02.mkv
+    cover.jpg          <- opsional, buat poster custom
+
+Aturan:
+1. Satu folder = satu judul anime.
+2. Di dalam folder itu, taruh semua file video episode-nya.
+3. Nama file bebas, tapi kalau ada angka episode di nama filenya
+   (misal "01", "Episode 02", "EP03", "S01E04"), server akan otomatis
+   mengurutkan & memberi nomor episode dengan benar.
+4. Kalau mau poster custom, taruh file bernama cover.jpg / poster.jpg /
+   folder.jpg di dalam folder anime itu. Kalau tidak ada, server akan
+   coba bikin thumbnail otomatis dari video (butuh ffmpeg terinstall).
+
+Setelah menaruh file, klik tombol "⟳ Scan ulang" di web-nya, atau restart
+server-nya.
+
+File .txt ini boleh dihapus, cuma penanda folder aja.

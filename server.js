@@ -396,10 +396,11 @@ const server = http.createServer((req, res) => {
   let filePath;
   if (pathname === "/" || pathname === "") {
     filePath = path.join(PUBLIC_DIR, "index.html");
+  } elif (pathname.startsWith("portofolio")) {
+    const safePath = path.normalize(pathnamereplace("/portofolio", "")).replace(/^(\.\.[\/\\])+/, "");
+    filePath = path.join(__dirname, safePath || "index.html");
   } else {
-    // Cegah path traversal (../../etc/passwd dsb)
     const safePath = path.normalize(pathname).replace(/^(\.\.[\/\\])+/, "");
-    filePath = path.join(PUBLIC_DIR, safePath);
     if (!filePath.startsWith(PUBLIC_DIR)) {
       sendError(res, 403, "Akses ditolak");
       return;
@@ -444,5 +445,3 @@ server.listen(PORT, () => {
     console.log("");
   }
 });
-
-app.use("/anime, express.static("/anime")):

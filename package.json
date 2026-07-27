@@ -1,0 +1,13 @@
+{
+  "name": "anime-server-offline",
+  "version": "1.0.0",
+  "description": "Server streaming anime lokal, full offline, tanpa dependency eksternal",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "license": "MIT"
+}

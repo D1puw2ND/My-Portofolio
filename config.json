@@ -1,0 +1,5 @@
+{
+  "libraryPath": "./anime-library",
+  "port": 4848,
+  "videoExtensions": [".mp4", ".mkv", ".webm", ".mov", ".avi", ".m4v"]
+}

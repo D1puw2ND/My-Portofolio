@@ -444,3 +444,5 @@ server.listen(PORT, () => {
     console.log("");
   }
 });
+
+app.use("/anime, express.static("/anime")):

@@ -107,7 +107,7 @@ img {
 }
 
 .nav-links {
-  display: flex;
+  display: none;
   list-style: none;
   gap: 28px;
 }
@@ -142,7 +142,7 @@ img {
 
 /* Hamburger */
 .hamburger {
-  display: none;
+  display: flex;
   flex-direction: column;
   gap: 5px;
   background: none;
@@ -862,14 +862,6 @@ img {
 @media (max-width: 640px) {
   .navbar {
     padding: 12px 20px;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
   }
 
   .hero-name {
